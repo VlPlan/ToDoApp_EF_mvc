@@ -1,0 +1,45 @@
+﻿@using ToDo.App.WebApp.Models
+
+@model ViewTaskModel
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Current Tasks";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>This is user's current tasks page</p>
+
+
+<br /><br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+
+            <th>Id</th>
+            <th>User</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+
+
+            @for (int i = 0; i < Model.MyTasks.Count; i++)
+            {
+
+
+                @Html.Partial("~/Views/Shared/_TaskItem.cshtml", Model.MyTasks[i])
+
+
+
+            }
+        </tr>
+
+    </tbody>
+</table>
+
+<br /><br />

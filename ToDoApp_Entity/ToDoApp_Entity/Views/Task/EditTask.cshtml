@@ -1,0 +1,33 @@
+﻿
+@model ToDo.App.Domain._Task_
+
+
+@{
+    ViewBag.Title = "Make changes to this Task";
+}
+
+<h1>Task changes:</h1>
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(x => x.Id)
+    <h3>Change Status:</h3>
+    @Html.LabelFor(x => x.Title)
+    @Html.EditorFor(x => x.Title)<br />
+    @Html.ValidationMessageFor(x => x.Title)<br />
+
+    @Html.LabelFor(x => x.Description)
+    @Html.EditorFor(x => x.Description)<br />
+    @Html.ValidationMessageFor(x => x.Description)<br />
+
+
+    @Html.LabelFor(x => x.Status)
+    @Html.DropDownList($"model.Status", Html.GetEnumSelectList(Model.Status.GetType()), new { Model.Status, @class = "form-control" })<br />
+    @Html.ValidationMessageFor(x => x.Status)<br />
+
+    <br /><br />
+    <button type="submit"> Save Changes </button>
+}
+.

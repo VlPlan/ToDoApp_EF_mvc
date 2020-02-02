@@ -1,0 +1,14 @@
+﻿@using ToDo.App.WebApp.Models;
+@model TasksViewModel
+
+<tr>
+
+    <td> @Model.Id</td>
+    <td> @Model.FirstName @Model.LastName</td>
+    <td> @Model.Title</td>
+    <td> @Model.Description</td>
+    <td> @Model.Status</td>
+    <td>@Html.ActionLink("EditTask","EditTask", "Task")</td>
+
+</tr>
+

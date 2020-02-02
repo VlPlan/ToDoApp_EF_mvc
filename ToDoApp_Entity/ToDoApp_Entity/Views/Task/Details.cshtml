@@ -1,0 +1,18 @@
+﻿@using ToDo.App.Domain;
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "_Layout";
+}
+
+
+
+<li>Customer Name: @Model.User.FirstName @Model.User.LastName</li>
+<li>Title: @Model.Title</li>
+<li>Type: @Model.TypeOfTask</li>
+<li>Description of task: @Model.Description</li>
+<li>Priority: @Model.Priority</li>
+<li>Status: @Model.Status</li>
+
+<partial name="~/Views/Task/_TaskItem.cshtml" />

@@ -1,0 +1,31 @@
+﻿@using ToDo.App.WebApp.Models
+@model NewTaskModel
+@{
+    ViewBag.Title = "Make Order";
+}
+
+<h1>Add new task:</h1>
+
+
+@using (Html.BeginForm())
+{
+    <h3>User info:</h3>
+    @Html.LabelFor(x => x.Firstname)
+    @Html.TextBox("model.Firstname", null, new { @class = "form-control" })<br />
+    @Html.LabelFor(x => x.Lastname)
+    @Html.TextBox("model.Lastname", null, new { @class = "form-control" })<br />
+    @Html.LabelFor(x => x.Age)
+    @Html.TextBox("model.Age", null, new { @class = "form-control" })<br />
+    @Html.LabelFor(x => x.AverageFreeTime)
+    @Html.TextBox("model.AverageFreeTime", null, new { @class = "form-control" })<br />
+    @Html.LabelFor(x => x.Title)
+    @Html.TextBox("model.Title", null, new { @class = "form-control" })<br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextBox("model.Description", null, new { @class = "form-control" })<br />
+    @Html.LabelFor(x => x.Status)
+    @Html.DropDownList($"model.Status", Html.GetEnumSelectList(Model.Status.GetType()), new { Model.Status, @class = "form-control" })<br />
+    @Html.LabelFor(x => x.MyTasks)
+    @Html.TextBox("model.MyTasks", null, new { @class = "form-control" })<br />
+    <br /><br />
+    <button type="submit"> Add Task </button>
+}
